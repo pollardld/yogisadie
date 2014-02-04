@@ -1,0 +1,46 @@
+header {
+	overflow: hidden;
+}
+
+.mainnav {
+	display: inline-block;
+	height: auto;
+	margin: .5em -4px 0 .5%;
+	vertical-align: middle;
+
+	a {
+		padding: .75rem 2.25rem;
+	}
+}
+
+.nav-list {
+	list-style: none;
+	margin: 0;
+
+	li {
+		float: left;
+		width: 50%;
+
+		a {
+			font-family: $lato;
+			font-weight: 700;
+			font-size: .8rem;
+			letter-spacing: .1em;
+		}
+	}
+}
+
+.nav-check {
+	display: none;
+
+	&:checked {
+
+		&~ .mainnav {
+			height: auto;
+		}
+	}
+}
+
+.nav-label {
+	display: none;
+}

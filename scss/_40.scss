@@ -1,0 +1,68 @@
+h2 {
+	font-size: 1.25rem;
+}
+
+header {
+	
+	.social {
+		margin: 0;
+		text-align: center;
+	}
+
+	.nav-list {
+		float: left;
+
+		li {
+			float: left;
+			width: auto;
+
+			a {
+				font-family: $lato;
+				font-weight: 700;
+				font-size: .8rem;
+				letter-spacing: .1em;
+			}
+		}
+	}
+}
+
+.logo {
+	padding: 0;
+	width: 175px;
+
+	a {
+		width: 140px;
+	}
+}
+
+.mainnav {
+
+	a {
+		padding: 1.3125rem;
+	}
+}
+
+.featured-post {
+	h1 {
+		font-size: 1.75rem;
+
+		span {
+			font-size: .9625rem;
+		}
+	}
+}
+
+.testimonial {
+	max-width: 36rem;
+}
+
+footer {
+
+	nav {
+
+		div {
+			float: right;
+			margin: 0 0 0 1rem;
+		}
+	}
+}

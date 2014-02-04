@@ -1,0 +1,60 @@
+$darkBlue: #283144;
+$aqua: #29eac1;
+$purple: #d561e6;
+$grey: #434343;
+$lt-grey: #f4f6f6;
+$dullGreen: #9ab1b3;
+$steel: #729092;
+
+$lato: 'Lato', sans-serif;
+$rosarivo: 'Rosarivo', serif;
+
+$margin: 1.75rem;
+
+/*============================================
+  Mixins
+=============================================*/
+
+@mixin vendor-prefix ($name, $argument) {
+    #{$name}: $argument;
+    -webkit-#{$name}: $argument;
+    -ms-#{$name}: $argument;
+    -moz-#{$name}: $argument;
+    -o-#{$name}: $argument;
+}
+
+@mixin clear() {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: block; clear: both; overflow: hidden; position: relative; }
+}
+
+/*============================================
+  Grid
+=============================================*/
+$columns: 12;
+$gutter-width: 2.5%;
+$column-width: (100 / $columns) - $gutter-width;
+$total-width: (($column-width + $gutter-width) * $columns);
+
+@mixin column ($x, $columns:$columns) {
+  display: inline;
+  float: left;
+  width: $total-width * (((($gutter-width + $column-width) * $x) - $gutter-width) / $total-width);
+  margin: 0 $total-width * (($gutter-width * .5) / $total-width);
+}
+
+@mixin push ($columns:$columns) {
+  margin: 0 0 0 $total-width * (($gutter-width * .5) / $total-width);
+}
+@mixin pull ($columns:$columns) {
+  margin: 0 $total-width * (($gutter-width * .5) / $total-width) 0 0;
+}
+@mixin pushpullwidth ($x, $columns:$columns) {
+  width: (($total-width - ((2 * ($gutter-width * .5)) + ((($columns / $x) - 2) * $gutter-width)))) / ($columns / $x); 
+}
+@mixin row($columns) { @include pushpullwidth($columns); }
+	
+.container, .spread { clear: both; display: block; margin: 0 auto; position: relative; 
+  &:after { content: ""; clear: both; }
+}
